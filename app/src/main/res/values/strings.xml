@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Contact Management</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="telephone_number">Telephone Number</string>
+    <string name="add">ADD</string>
+    <string name="number">1</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="call">Call</string>
+    <string name="text">Text</string>
+    <string name="enter_message">Type Message Here</string>
+    <string name="send_message">Send Message</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="edit_contact">Edit Contact</string>
+</resources>

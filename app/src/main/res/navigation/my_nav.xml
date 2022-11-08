@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.contactmanagment.fragments.list.ListFragment"
+        android:label="List of Contacts"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.contactmanagment.fragments.add.AddFragment"
+        android:label="Add Contact"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.contactmanagment.fragments.contact.ContactFragment"
+        android:label="Contact"
+        tools:layout="@layout/fragment_contact">
+        <argument
+            android:name="allTheUser"
+            app:argType="com.example.contactmanagment.model.User" />
+        <action
+            android:id="@+id/action_contactFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_SMSFragment"
+            app:destination="@id/SMSFragment" />
+        <action
+            android:id="@+id/action_contactFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SMSFragment"
+        android:name="com.example.contactmanagment.fragments.sms.SMSFragment"
+        android:label="Text Message"
+        tools:layout="@layout/fragment_s_m_s">
+        <argument
+            android:name="activeUser"
+            app:argType="com.example.contactmanagment.model.User" />
+        <action
+            android:id="@+id/action_SMSFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="com.example.contactmanagment.fragments.update.UpdateFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_update">
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.contactmanagment.model.User" />
+        <action
+            android:id="@+id/action_updateFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>
